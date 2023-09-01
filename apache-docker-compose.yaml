@@ -1,0 +1,26 @@
+version: '3'
+name: apache-servers
+services:
+  apache1:
+    image: httpd:latest
+    container_name: apache1
+    ports:
+      - "8081:80"
+    volumes:
+      - ./apache_backend_content/apache1:/usr/local/apache2/htdocs/
+
+  apache2:
+    image: httpd:latest
+    container_name: apache2
+    ports:
+      - "8082:80"
+    volumes:
+      - ./apache_backend_content/apache2:/usr/local/apache2/htdocs/
+
+  apache3:
+    image: httpd:latest
+    container_name: apache3
+    ports:
+      - "8083:80"
+    volumes:
+      - ./apache_backend_content/apache3:/usr/local/apache2/htdocs/
